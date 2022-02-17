@@ -1,7 +1,11 @@
 name: Lint
 
-on:
-  workflow_call
+on: 
+  pull_request:
+    types: [opened, synchronize]
+    branches:  
+      - main
+      - master
 # Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
 permissions:
   checks: write
