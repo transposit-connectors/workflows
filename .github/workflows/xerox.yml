@@ -14,7 +14,7 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v2
         - name: Replicating global workflow
-          uses: derberg/global-workflows-support@v0.0.2
+          uses: derberg/global-workflows-support@v0.0.4
           with:
             github_token: ${{ secrets.COPY_TOKEN }}
             files_to_ignore: xerox.yml
