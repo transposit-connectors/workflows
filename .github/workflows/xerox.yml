@@ -2,7 +2,9 @@ name: put workflows everywhere
 
 on:
   push:
-    branches: [ master ] #or main
+    branches: 
+      - master
+      - main
   workflow_dispatch:
   
 
@@ -18,7 +20,7 @@ jobs:
         - name: Replicating global workflow
           uses: derberg/global-workflows-support@v0.0.2
           with:
-            github_token: ${{ secrets.COPYTOKEN }}
+            github_token: ${{ secrets.COPY_TOKEN }}
             files_to_ignore: xerox.yml
             # repos_to_ignore: repo1,repo2
             committer_username: iggy_orchestrate
