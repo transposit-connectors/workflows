@@ -5,15 +5,11 @@ on:
     branches: 
       - master
       - main
-  workflow_dispatch:
-  
+  workflow_dispatch: {}
 
 jobs:
-
   replicate_changes:
-
       runs-on: ubuntu-latest
-
       steps:
         - name: Checkout repository
           uses: actions/checkout@v2
