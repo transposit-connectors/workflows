@@ -1,0 +1,24 @@
+name: put workflows everywhere
+
+on:
+  push:
+      branches: [ master ] #or main
+
+jobs:
+
+  replicate_changes:
+
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Replicating global workflow
+          uses: derberg/global-workflows-support@v0.0.2
+          with:
+            github_token: ${{ secrets.COPYTOKEN }}
+            files_to_ignore: xerox.yml
+            # repos_to_ignore: repo1,repo2
+            committer_username: iggy_orchestrate
+            committer_email: support@transposit.com
+            commit_message: "ci: update global workflows"
